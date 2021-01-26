@@ -16,7 +16,7 @@
             <tr>
               <td><%= link_to task.id, task %></td>
               <td><img class="mr-2 rounded" src="<%= gravatar_url(task.user, { size: 50 }) %>" alt=""></td>
-              <td><%=  link_to task.user.name, user_path(task.user) %></td>
+              <td><%= task.user.name %></td>
               <td><%= task.content %></td>
               <td><%= task.status %></td>
               <td class="text-muted">posted at <%= task.created_at %></td>
