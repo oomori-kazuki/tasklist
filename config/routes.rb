@@ -3,7 +3,7 @@ Rails.application.routes.draw do
  	resources :tasks
  	
  	get "signup", to: "users#new"
- 	resources :users, only: [:index, :create, :show]
+ 	resources :users, only: [:index, :show, :create]
  	
  	get "login", to: "sessions#new"
  	post "login", to: "sessions#create"

@@ -1,7 +1,6 @@
 class UsersController < ApplicationController
   before_action :require_user_logged_in, only: [:index, :show]
-  before_action :set_message, only: [:show, :edit, :update, :destroy]
-  
+
   def index
     @users = User.order(id: :desc).page(params[:page]).per(25)
   end
@@ -32,9 +31,4 @@ class UsersController < ApplicationController
   def user_params
     params.require(:user).permit(:name, :email, :password, :password_confirmation)
   end
-  
-  def set_message
-  	@user = User.find(params[:id])
-  end
-  
 end
